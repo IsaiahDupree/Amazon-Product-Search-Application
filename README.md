@@ -1,92 +1,168 @@
-# Amazon Product Search
+# Amazon Product Search Application
 
-An intelligent product search application that combines Amazon's product data with AI-powered query understanding.
+An intelligent product search application that combines Amazon's product data with AI-powered query understanding. This application leverages OpenAI's GPT models, Google Search, and Amazon's product data to provide smart, context-aware product searches.
 
-## Features
+## 🌟 Features
 
-- Smart query understanding using OpenAI and Google Search
-- Real-time Amazon product search
-- Product comparison tools
-- Search history tracking
-- Alternative product suggestions
-- Non-product query handling (recipes, medical info, etc.)
+### Smart Search Capabilities
+- **AI-Powered Query Understanding**
+  - Natural language query processing
+  - Context-aware search enhancement
+  - Automatic query refinement
+  - Non-product query handling
 
-## Requirements
+### Product Search
+- **Amazon Product Integration**
+  - Real-time product data
+  - Price comparison
+  - Product details and specifications
+  - Related product suggestions
 
+### Advanced Features
+- **Multi-Source Intelligence**
+  - OpenAI GPT integration
+  - Google Search enhancement
+  - Amazon product data
+  - Smart fallback mechanisms
+
+- **User Experience**
+  - Modern Qt-based GUI
+  - Real-time search updates
+  - Progress tracking
+  - Error handling and recovery
+
+## 🛠️ Technical Architecture
+
+### Components
+1. **GUI Layer** (`product_search_gui.py`)
+   - Qt-based user interface
+   - Search input handling
+   - Results display
+   - Progress updates
+
+2. **Search Logic** (`batch_search.py`)
+   - Batch processing
+   - Result aggregation
+   - Error handling
+
+3. **API Integration**
+   - `amazon_api_client.py`: Amazon product data
+   - `google_search_client.py`: Search enhancement
+   - `query_validator.py`: Query processing
+
+4. **Data Management**
+   - `data_store.py`: Local data handling
+   - Search history tracking
+   - Result caching
+
+## 🚀 Getting Started
+
+### Prerequisites
 - Python 3.8+
-- PySide6 for GUI
-- OpenAI API key
-- RapidAPI key (for Amazon Data API)
-- Google API key and Custom Search Engine ID
+- Qt development environment
+- Required API keys (see below)
 
-## Installation
+### Installation
 
-1. Clone the repository:
+1. **Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/amazon-product-search.git
-cd amazon-product-search
+git clone https://github.com/IsaiahDupree/Amazon-Product-Search-Application.git
+cd Amazon-Product-Search-Application
 ```
 
-2. Install dependencies:
+2. **Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables:
-   - Copy `.env.template` to a new file named `.env`
-   - Fill in your API keys in the `.env` file:
-```
-# Get your OpenAI API key from: https://platform.openai.com/account/api-keys
-OPENAI_API_KEY=your_openai_api_key_here
-
-# Get your RapidAPI key from: https://rapidapi.com/
-RAPIDAPI_KEY=your_rapidapi_key_here
-
-# Get Google API credentials from: https://console.cloud.google.com/
-GOOGLE_API_KEY=your_google_api_key_here
-GOOGLE_SEARCH_ENGINE_ID=your_search_engine_id_here
+3. **Set Up Environment Variables**
+```bash
+cp .env.template .env
+# Edit .env with your API keys
 ```
 
-> ⚠️ **Important**: Never commit your `.env` file to version control. It contains sensitive API keys.
+### Required API Keys
+- **OpenAI API Key**: For query understanding
+  - Get from: https://platform.openai.com/account/api-keys
+  
+- **RapidAPI Key**: For Amazon product data
+  - Get from: https://rapidapi.com/
+  
+- **Google API Key**: For search enhancement
+  - Get from: https://console.cloud.google.com/
+  - Also need Search Engine ID from: https://programmablesearchengine.google.com/
 
-## Usage
+## 💻 Usage
 
-Run the main application:
+### Basic Usage
 ```bash
 python main.py
 ```
 
-### Features:
-1. **Product Search**
-   - Enter product queries
-   - View detailed product information
-   - Compare multiple products
+### Search Types
+1. **Product Searches**
+   - Direct product names
+   - Product categories
+   - Feature-based queries
 
-2. **Smart Query Understanding**
-   - Handles non-product queries
-   - Provides relevant information
-   - Suggests related products
+2. **Smart Queries**
+   - Natural language questions
+   - Comparative queries
+   - Technical specifications
 
-3. **History and Tracking**
-   - Save search history
-   - Track product comparisons
-   - View alternative suggestions
+3. **Non-Product Queries**
+   - Recipe suggestions
+   - General information
+   - Technical advice
 
-## Contributing
+## 🔧 Development
 
+### Project Structure
+```
+├── main.py                 # Application entry point
+├── product_search_gui.py   # GUI implementation
+├── batch_search.py         # Search processing
+├── amazon_api_client.py    # Amazon API integration
+├── google_search_client.py # Google Search integration
+├── query_validator.py      # Query processing
+├── data_store.py          # Data management
+├── requirements.txt        # Dependencies
+└── .env.template          # Environment template
+```
+
+### Adding New Features
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Implement your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-## License
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
+### Guidelines
+1. Follow Python PEP 8 style guide
+2. Add documentation for new features
+3. Maintain test coverage
+4. Update README as needed
+
+## 📝 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
+## 🙏 Acknowledgments
 - OpenAI for GPT API
 - RapidAPI for Amazon Data API
 - Google Custom Search API
-- PySide6 for the GUI framework
+- Qt framework (PySide6)
+- All contributors and users
+
+## 📞 Support
+- Create an issue for bug reports
+- Submit feature requests via issues
+- Check existing issues before submitting new ones
+
+## 🔒 Security
+- Never commit API keys
+- Use .env for sensitive data
+- Regular security audits
+- Prompt key rotation
